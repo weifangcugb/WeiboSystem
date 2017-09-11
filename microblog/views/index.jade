@@ -1,0 +1,19 @@
+extends bloglayout
+block bcontent
+  include narbar.jade
+  div.jumbotron
+    div.container
+      - if (!user)
+      
+        h1 欢迎来到FangWei的微博系统
+        h1 Welcome to CloudBeaver!
+        p 这是一个基于Node.js下Express4.2+Jade的微博系統。
+
+        p
+          a(class='btn btn-primary btn-lg' href='/login' role="button") 登录
+          a(class='btn btn-lg' href='/reg' role="button") 注册
+      - else
+        include ./say.jade
+  div.container
+    include ./posts.jade
+    include footer.jade
